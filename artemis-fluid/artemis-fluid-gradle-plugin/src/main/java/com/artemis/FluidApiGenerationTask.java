@@ -1,17 +1,12 @@
 package com.artemis;
 
-import com.artemis.FluidGenerator;
-import com.artemis.FluidGeneratorPreferences;
-
 import org.gradle.api.DefaultTask;
-import org.gradle.api.Task;
 import org.gradle.api.file.FileCollection;
-import org.gradle.api.logging.Logger;
-import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.TaskAction;
+import org.gradle.api.tasks.options.Option;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -27,13 +22,10 @@ import java.util.Set;
  */
 public class FluidApiGenerationTask extends DefaultTask {
 
-    @InputFile
     private File generatedSourcesDirectory;
 
-    @InputFiles
     private FileCollection classpath;
 
-    @Input
     public FluidGeneratorPreferences preferences = new FluidGeneratorPreferences();
 
     @TaskAction
@@ -97,22 +89,32 @@ public class FluidApiGenerationTask extends DefaultTask {
         }
     }
 
+    @Input
     public FluidGeneratorPreferences getPreferences() {
         return preferences;
     }
 
+    @Option(option = "preferences", description = "Configures the fluid generator preferences, you can filter classes to process using a regex (File).")
+    public void setPreferences(FluidGeneratorPreferences preferences) {
+        this.preferences = preferences;
+    }
+
+    @InputFile
     public File getGeneratedSourcesDirectory() {
         return generatedSourcesDirectory;
     }
 
+    @Option(option = "generated-sources-directory", description = "Configures the source of generated sources (File).")
     public void setGeneratedSourcesDirectory(File generatedSourcesDirectory) {
         this.generatedSourcesDirectory = generatedSourcesDirectory;
     }
 
+    @InputFiles
     public FileCollection getClasspath() {
         return classpath;
     }
 
+    @Option(option = "classpath", description = "Configures the classpath (FileCollection).")
     public void setClasspath(FileCollection classpath) {
         this.classpath = classpath;
     }

@@ -11,6 +11,7 @@ import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputDirectories;
 import org.gradle.api.tasks.OutputDirectory;
 import org.gradle.api.tasks.TaskAction;
+import org.gradle.api.tasks.options.Option;
 
 import java.io.File;
 
@@ -22,134 +23,128 @@ import java.io.File;
  */
 public class ArtemisWeavingTask extends DefaultTask {
 
-	/**
-	 * Root folder for class files.
-	 *
-	 * @deprecated use classesDirs
-	 */
-	@Optional
-	@Deprecated
-	@OutputDirectory
-	private File classesDir;
+    /**
+     * Root folder for class files.
+     *
+     * @deprecated use classesDirs
+     */
+    @Optional
+    @Deprecated
+    private File classesDir;
 
-	/**
-	 * Root directories for class files.
-	 */
-	@Optional
-	@OutputDirectories
-	private FileCollection classesDirs;
+    /**
+     * Root directories for class files.
+     */
+    @Optional
+    private FileCollection classesDirs;
 
-	/**
-	 * Enabled weaving of pooled components (more viable on Android than JVM).
-	 */
-	@Input
-	private boolean enablePooledWeaving;
+    private boolean enablePooledWeaving;
 
-	/**
-	 * If false, no weaving will take place (useful for debugging).
-	 */
-	@Input
-	private boolean enableArtemisPlugin;
+    private boolean enableArtemisPlugin;
 
-	@Input
-	private boolean optimizeEntitySystems;
+    private boolean optimizeEntitySystems;
 
-	/**
-	 * Generate optimized read/write classes for entity link fields, used
-	 * by the {@link com.artemis.link.EntityLinkManager}.
-	 */
-	@Input
-	private boolean generateLinkMutators;
+    private boolean generateLinkMutators;
 
-	@TaskAction
-	public void weave() {
-		getLogger().info("Artemis plugin started.");
+    @TaskAction
+    public void weave() {
+        getLogger().info("Artemis plugin started.");
 
-		if (!enableArtemisPlugin) {
-			getLogger().info("Plugin disabled via 'enableArtemisPlugin' set to false.");
-			return;
-		}
+        if (!enableArtemisPlugin) {
+            getLogger().info("Plugin disabled via 'enableArtemisPlugin' set to false.");
+            return;
+        }
 
-		long start = System.currentTimeMillis();
-		//@todo provide gradle alternative.
-		//if (context != null && !context.hasDelta(sourceDirectory)) return;
+        long start = System.currentTimeMillis();
+        //@todo provide gradle alternative.
+        //if (context != null && !context.hasDelta(sourceDirectory)) return;
 
-		Logger log = getLogger();
+        Logger log = getLogger();
 
 //		log.info("");
-		log.info("CONFIGURATION");
-		log.info(WeaverLog.LINE.replaceAll("\n", ""));
-		log.info(WeaverLog.format("enablePooledWeaving", enablePooledWeaving));
-		log.info(WeaverLog.format("generateLinkMutators", generateLinkMutators));
-		log.info(WeaverLog.format("optimizeEntitySystems", optimizeEntitySystems));
-		if (classesDirs != null && !classesDirs.isEmpty()) {
-			log.info(WeaverLog.format("outputDirectories", classesDirs.getFiles()));
-		} else {
-			log.info(WeaverLog.format("outputDirectory", classesDir));
-		}
-		log.info(WeaverLog.LINE.replaceAll("\n", ""));
-		
-		Weaver.enablePooledWeaving(enablePooledWeaving);
-		Weaver.generateLinkMutators(generateLinkMutators);
-		Weaver.optimizeEntitySystems(optimizeEntitySystems);
+        log.info("CONFIGURATION");
+        log.info(WeaverLog.LINE.replaceAll("\n", ""));
+        log.info(WeaverLog.format("enablePooledWeaving", enablePooledWeaving));
+        log.info(WeaverLog.format("generateLinkMutators", generateLinkMutators));
+        log.info(WeaverLog.format("optimizeEntitySystems", optimizeEntitySystems));
+        if (classesDirs != null && !classesDirs.isEmpty()) {
+            log.info(WeaverLog.format("outputDirectories", classesDirs.getFiles()));
+        } else {
+            log.info(WeaverLog.format("outputDirectory", classesDir));
+        }
+        log.info(WeaverLog.LINE.replaceAll("\n", ""));
 
-		Weaver weaver;
-		if (classesDirs != null && !classesDirs.isEmpty()) {
-			weaver = new Weaver(classesDirs.getFiles());
-		} else {
-			weaver = new Weaver(classesDir);
-		}
-		WeaverLog processed = weaver.execute();
-		for (String s : processed.getFormattedLog().split("\n")) {
-			log.info(s);
-		}
-	}
+        Weaver.enablePooledWeaving(enablePooledWeaving);
+        Weaver.generateLinkMutators(generateLinkMutators);
+        Weaver.optimizeEntitySystems(optimizeEntitySystems);
 
-	public boolean isEnableArtemisPlugin() {
-		return enableArtemisPlugin;
-	}
+        Weaver weaver;
+        if (classesDirs != null && !classesDirs.isEmpty()) {
+            weaver = new Weaver(classesDirs.getFiles());
+        } else {
+            weaver = new Weaver(classesDir);
+        }
+        WeaverLog processed = weaver.execute();
+        for (String s : processed.getFormattedLog().split("\n")) {
+            log.info(s);
+        }
+    }
 
-	public void setEnableArtemisPlugin(boolean enableArtemisPlugin) {
-		this.enableArtemisPlugin = enableArtemisPlugin;
-	}
+    @Input
+    public boolean isEnableArtemisPlugin() {
+        return enableArtemisPlugin;
+    }
 
-	public boolean isEnablePooledWeaving() {
-		return enablePooledWeaving;
-	}
+    @Input
+    public boolean isGenerateLinkMutators() {
+        return generateLinkMutators;
+    }
 
-	public void setEnablePooledWeaving(boolean enablePooledWeaving) {
-		this.enablePooledWeaving = enablePooledWeaving;
-	}
+    @Input
+    public boolean isEnablePooledWeaving() {
+        return enablePooledWeaving;
+    }
 
-	public void setGenerateLinkMutators(boolean generateLinkMutators) {
-		this.generateLinkMutators = generateLinkMutators;
-	}
+    @Input
+    public boolean isOptimizeEntitySystems() {
+        return optimizeEntitySystems;
+    }
 
-	public boolean isGenerateLinkMutators() {
-		return generateLinkMutators;
-	}
+    @Option(option = "enable-artemis-plugin", description = "If false, no weaving will take place (useful for debugging).")
+    public void setEnableArtemisPlugin(boolean enableArtemisPlugin) {
+        this.enableArtemisPlugin = enableArtemisPlugin;
+    }
 
-	public boolean isOptimizeEntitySystems() {
-		return optimizeEntitySystems;
-	}
+    @Option(option = "enable-pooled-weaving", description = "Enabled weaving of pooled components (more viable on Android than JVM).")
+    public void setEnablePooledWeaving(boolean enablePooledWeaving) {
+        this.enablePooledWeaving = enablePooledWeaving;
+    }
 
-	public void setOptimizeEntitySystems(boolean optimizeEntitySystems) {
-		this.optimizeEntitySystems = optimizeEntitySystems;
-	}
+    @Option(option = "generate-link-mutators", description = "Generate optimized read/write classes for entity link fields, used")
+    public void setGenerateLinkMutators(boolean generateLinkMutators) {
+        this.generateLinkMutators = generateLinkMutators;
+    }
 
-	public File getClassesDir() {
-		return classesDir;
-	}
+    @Option(option = "optimize-entity-systems", description = "Compile Optimized Systems")
+    public void setOptimizeEntitySystems(boolean optimizeEntitySystems) {
+        this.optimizeEntitySystems = optimizeEntitySystems;
+    }
 
-	public void setClassesDir(File classesDir) {
-		this.classesDir = classesDir;
-	}
+    @OutputDirectory
+    public File getClassesDir() {
+        return classesDir;
+    }
 
-	public FileCollection getClassesDirs() {
-		return classesDirs;
-	}
+    public void setClassesDir(File classesDir) {
+        this.classesDir = classesDir;
+    }
 
-	public void setClassesDirs(FileCollection classesDirs) {
-		this.classesDirs = classesDirs;
-	}
+    @OutputDirectories
+    public FileCollection getClassesDirs() {
+        return classesDirs;
+    }
+
+    public void setClassesDirs(FileCollection classesDirs) {
+        this.classesDirs = classesDirs;
+    }
 }
