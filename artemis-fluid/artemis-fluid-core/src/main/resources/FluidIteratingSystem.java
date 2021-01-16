@@ -1,5 +1,3 @@
-package com.artemis;
-
 import com.artemis.systems.IteratingSystem;
 
 /**
