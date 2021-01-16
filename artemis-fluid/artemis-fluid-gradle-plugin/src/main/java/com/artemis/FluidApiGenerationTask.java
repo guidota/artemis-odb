@@ -2,10 +2,7 @@ package com.artemis;
 
 import org.gradle.api.DefaultTask;
 import org.gradle.api.file.FileCollection;
-import org.gradle.api.tasks.Input;
-import org.gradle.api.tasks.InputFile;
-import org.gradle.api.tasks.InputFiles;
-import org.gradle.api.tasks.TaskAction;
+import org.gradle.api.tasks.*;
 import org.gradle.api.tasks.options.Option;
 
 import java.io.File;
@@ -98,7 +95,7 @@ public class FluidApiGenerationTask extends DefaultTask {
         this.preferences = preferences;
     }
 
-    @InputFile
+    @InputDirectory
     public File getGeneratedSourcesDirectory() {
         return generatedSourcesDirectory;
     }
