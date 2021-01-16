@@ -1,5 +1,3 @@
-package com.artemis;
-
 import com.artemis.utils.ImmutableBag;
 import com.artemis.utils.IntBag;
 
@@ -26,7 +24,7 @@ public class EBag implements ImmutableBag<E> {
     }
 
     @Override
-    public Iterator<E> iterator() {
+    public java.util.Iterator<E> iterator() {
         return new EBagIterator(entities, size);
     }
 
