@@ -1,3 +1,5 @@
+package com.artemis;
+
 import com.artemis.utils.ImmutableBag;
 import com.artemis.utils.IntBag;
 

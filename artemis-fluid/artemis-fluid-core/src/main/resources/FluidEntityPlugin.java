@@ -1,3 +1,5 @@
+package com.artemis;
+
 import com.artemis.injection.AspectFieldResolver;
 import com.artemis.injection.FieldResolver;
 import com.artemis.utils.reflect.Field;

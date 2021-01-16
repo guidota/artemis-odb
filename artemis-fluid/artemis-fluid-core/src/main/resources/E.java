@@ -1,3 +1,5 @@
+package com.artemis;
+
 import com.artemis.ChangeRegistry;
 /**
  * Placeholder for utility classes that depend on E.

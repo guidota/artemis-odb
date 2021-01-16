@@ -1,3 +1,5 @@
+package com.artemis;
+
 import com.artemis.annotations.UnstableApi;
 
 import java.util.Iterator;

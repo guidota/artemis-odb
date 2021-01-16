@@ -1,3 +1,5 @@
+package com.artemis;
+
 import java.lang.Class;
 import java.lang.Integer;
 import java.util.HashMap;
