@@ -94,7 +94,6 @@ public class FluidApiGenerationTask extends DefaultTask {
         return preferences;
     }
 
-    @Option(option = "preferences", description = "Configures the fluid generator preferences, you can filter classes to process using a regex (File).")
     public void setPreferences(FluidGeneratorPreferences preferences) {
         this.preferences = preferences;
     }
@@ -104,7 +103,6 @@ public class FluidApiGenerationTask extends DefaultTask {
         return generatedSourcesDirectory;
     }
 
-    @Option(option = "generated-sources-directory", description = "Configures the source of generated sources (File).")
     public void setGeneratedSourcesDirectory(File generatedSourcesDirectory) {
         this.generatedSourcesDirectory = generatedSourcesDirectory;
     }
