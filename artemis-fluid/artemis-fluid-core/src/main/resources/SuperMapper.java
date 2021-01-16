@@ -1,3 +1,5 @@
+package com.artemis;
+
 /**
  * Placeholder for utility classes that depend on SuperMapper.
  *
