@@ -1,6 +1,8 @@
 package com.artemis.systems;
 
-import com.artemis.*;
+import com.artemis.Aspect;
+import com.artemis.BaseEntitySystem;
+import com.artemis.EntitySubscription;
 import com.artemis.utils.IntBag;
 
 /**

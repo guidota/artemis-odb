@@ -1,14 +1,13 @@
 package com.artemis.managers;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-
+import com.artemis.Entity;
+import com.artemis.World;
 import com.artemis.WorldConfiguration;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.artemis.Entity;
-import com.artemis.World;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class GroupManagerTest {
 	private static final String GROUPIE = "groupie";

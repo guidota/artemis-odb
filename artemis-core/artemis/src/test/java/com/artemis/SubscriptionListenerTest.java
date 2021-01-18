@@ -6,14 +6,11 @@ import com.artemis.component.ComponentX;
 import com.artemis.component.ComponentY;
 import com.artemis.systems.EntityProcessingSystem;
 import com.artemis.systems.IteratingSystem;
+import com.artemis.utils.BitVector;
 import com.artemis.utils.IntBag;
 import org.junit.Test;
 
-import com.artemis.utils.BitVector;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class SubscriptionListenerTest {
 

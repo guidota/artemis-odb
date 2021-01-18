@@ -1,9 +1,8 @@
 package com.artemis;
 
 import com.artemis.utils.Bag;
-import com.artemis.utils.ShortBag;
-
 import com.artemis.utils.BitVector;
+import com.artemis.utils.ShortBag;
 
 /**
  * Fastest way of changing entity component compositions. Primarily useful when

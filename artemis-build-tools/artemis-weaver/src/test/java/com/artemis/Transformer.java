@@ -1,17 +1,16 @@
 package com.artemis;
 
-import static org.junit.Assert.assertEquals;
-
-import java.io.InputStream;
-
-import com.artemis.weaver.OptimizationTransmuter;
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.ClassWriter;
-
 import com.artemis.meta.ClassMetadata;
 import com.artemis.meta.ClassMetadata.OptimizationType;
 import com.artemis.meta.ClassMetadata.WeaverType;
 import com.artemis.weaver.ComponentTypeTransmuter;
+import com.artemis.weaver.OptimizationTransmuter;
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.ClassWriter;
+
+import java.io.InputStream;
+
+import static org.junit.Assert.assertEquals;
 
 final class Transformer {
 	

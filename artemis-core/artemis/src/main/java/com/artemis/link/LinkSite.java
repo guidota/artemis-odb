@@ -2,10 +2,9 @@ package com.artemis.link;
 
 import com.artemis.*;
 import com.artemis.annotations.LinkPolicy;
+import com.artemis.utils.BitVector;
 import com.artemis.utils.IntBag;
 import com.artemis.utils.reflect.Field;
-
-import com.artemis.utils.BitVector;
 
 import static com.artemis.Aspect.all;
 import static com.artemis.annotations.LinkPolicy.Policy.CHECK_SOURCE_AND_TARGETS;

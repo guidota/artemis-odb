@@ -1,7 +1,10 @@
 package com.artemis.injection;
 
 import com.artemis.*;
-import com.artemis.annotations.*;
+import com.artemis.annotations.All;
+import com.artemis.annotations.AspectDescriptor;
+import com.artemis.annotations.Exclude;
+import com.artemis.annotations.One;
 import com.artemis.utils.reflect.Annotation;
 import com.artemis.utils.reflect.Field;
 

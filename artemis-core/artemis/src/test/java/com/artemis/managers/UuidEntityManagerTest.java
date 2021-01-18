@@ -1,17 +1,14 @@
 package com.artemis.managers;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNull;
-
-import java.util.UUID;
-
+import com.artemis.Entity;
+import com.artemis.World;
 import com.artemis.WorldConfiguration;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.artemis.Entity;
-import com.artemis.World;
+import java.util.UUID;
+
+import static org.junit.Assert.*;
 
 @SuppressWarnings("static-method")
 public class UuidEntityManagerTest {

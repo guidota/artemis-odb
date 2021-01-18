@@ -1,8 +1,8 @@
 package com.artemis.cli.converter;
 
-import java.io.File;
-
 import com.beust.jcommander.IStringConverter;
+
+import java.io.File;
 
 public class EclipseProjectFolder implements IStringConverter<File> {
 

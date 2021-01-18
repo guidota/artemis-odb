@@ -1,10 +1,9 @@
 package com.artemis;
 
+import com.artemis.systems.EntityProcessingSystem;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.artemis.systems.EntityProcessingSystem;
 
 /**
  * PerformerWorldTest.

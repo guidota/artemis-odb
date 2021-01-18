@@ -1,6 +1,6 @@
 package com.artemis;
 
-import java.lang.RuntimeException;import java.lang.String;import java.lang.Throwable; /**
+/**
  * World configuration failed.
  *
  * @author Daan van Yperen

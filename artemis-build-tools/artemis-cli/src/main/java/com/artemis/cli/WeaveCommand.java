@@ -1,16 +1,16 @@
 package com.artemis.cli;
 
-import static com.artemis.meta.ClassMetadata.WeaverType.POOLED;
-
-import java.io.File;
-import java.util.List;
-
 import com.artemis.Weaver;
 import com.artemis.WeaverLog;
 import com.artemis.cli.converter.FolderConverter;
 import com.artemis.meta.ClassMetadata;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
+
+import java.io.File;
+import java.util.List;
+
+import static com.artemis.meta.ClassMetadata.WeaverType.POOLED;
 
 @Parameters(
 		commandDescription="Weave component types and inject profiler code into entity systems")

@@ -1,8 +1,14 @@
 package com.artemis.meta;
 
-import java.io.InputStream;
-
-import com.artemis.component.*;
+import com.artemis.Entity;
+import com.artemis.NullProfiler;
+import com.artemis.World;
+import com.artemis.component.ComponentToWeave;
+import com.artemis.component.PooledComponentNotScanned;
+import com.artemis.component.PooledComponentWithReset;
+import com.artemis.meta.ClassMetadata.WeaverType;
+import com.artemis.system.BeginEndSystem;
+import com.artemis.system.NoBeginEndSystem;
 import com.artemis.weaver.template.MultiEntityIdLink;
 import com.artemis.weaver.template.MultiEntityLink;
 import com.artemis.weaver.template.UniEntityIdLink;
@@ -12,12 +18,7 @@ import org.junit.Test;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.Type;
 
-import com.artemis.Entity;
-import com.artemis.NullProfiler;
-import com.artemis.World;
-import com.artemis.meta.ClassMetadata.WeaverType;
-import com.artemis.system.BeginEndSystem;
-import com.artemis.system.NoBeginEndSystem;
+import java.io.InputStream;
 
 import static org.junit.Assert.*;
 

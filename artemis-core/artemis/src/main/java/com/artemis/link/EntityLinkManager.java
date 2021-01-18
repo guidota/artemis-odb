@@ -1,12 +1,14 @@
 package com.artemis.link;
 
-import com.artemis.*;
+import com.artemis.BaseEntitySystem;
+import com.artemis.Component;
+import com.artemis.ComponentType;
+import com.artemis.ComponentTypeFactory;
 import com.artemis.annotations.SkipWire;
 import com.artemis.utils.Bag;
 import com.artemis.utils.reflect.ClassReflection;
 import com.artemis.utils.reflect.Field;
 import com.artemis.utils.reflect.ReflectionException;
-
 
 import static com.artemis.Aspect.all;
 

@@ -1,8 +1,5 @@
 package com.artemis.cli;
 
-import java.io.File;
-import java.util.List;
-
 import com.artemis.ClassUtil;
 import com.artemis.Weaver;
 import com.artemis.WeaverLog;
@@ -10,6 +7,9 @@ import com.artemis.cli.converter.FolderConverter;
 import com.artemis.meta.ClassMetadata;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
+
+import java.io.File;
+import java.util.List;
 
 @Parameters(
 		commandDescription="Optimize systems extending EntityProcessingSystem")

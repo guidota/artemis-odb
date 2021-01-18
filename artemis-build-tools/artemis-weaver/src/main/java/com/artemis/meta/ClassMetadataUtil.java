@@ -1,16 +1,10 @@
 package com.artemis.meta;
 
+import java.io.Serializable;
+import java.util.*;
+
 import static org.objectweb.asm.Opcodes.ACC_FINAL;
 import static org.objectweb.asm.Opcodes.ACC_STATIC;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 public final class ClassMetadataUtil {
 	

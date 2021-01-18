@@ -1,10 +1,9 @@
 package com.artemis.weaver.profile;
 
+import com.artemis.meta.ClassMetadata;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.commons.AdviceAdapter;
-
-import com.artemis.meta.ClassMetadata;
 
 class ProfileInitializeWeaver extends AdviceAdapter implements Opcodes {
 	private ClassMetadata info;

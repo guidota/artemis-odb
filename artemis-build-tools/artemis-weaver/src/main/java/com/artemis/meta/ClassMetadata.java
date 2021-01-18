@@ -1,9 +1,9 @@
 package com.artemis.meta;
 
+import org.objectweb.asm.Type;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import org.objectweb.asm.Type;
 
 public final class ClassMetadata {
 	public WeaverType annotation = WeaverType.NONE;

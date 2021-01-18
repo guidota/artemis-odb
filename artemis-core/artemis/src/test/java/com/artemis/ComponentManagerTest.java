@@ -1,10 +1,10 @@
 package com.artemis;
 
-import static org.junit.Assert.fail;
+import org.junit.Before;
 
 import java.lang.reflect.Field;
 
-import org.junit.Before;
+import static org.junit.Assert.fail;
 
 public class ComponentManagerTest {
 

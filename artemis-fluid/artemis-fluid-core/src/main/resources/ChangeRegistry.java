@@ -1,16 +1,14 @@
 package com.artemis;
 
-import java.lang.Class;
-import java.lang.Integer;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 public final class ChangeRegistry extends BaseSystem {
-  protected Map<Integer, Set<Class<? extends Component>>> toRemove = new HashMap();
+  protected Map<Integer, Set<Class<? extends Component>>> toRemove = new HashMap<>();
 
-  protected Map<Integer, Set<Component>> toMark = new HashMap();
+  protected Map<Integer, Set<Component>> toMark = new HashMap<>();
 
   protected void initialize() {
     E._changeRegistry=this;

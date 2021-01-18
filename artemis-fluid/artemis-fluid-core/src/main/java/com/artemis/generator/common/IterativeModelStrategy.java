@@ -1,8 +1,8 @@
 package com.artemis.generator.common;
 
 import com.artemis.generator.model.artemis.ArtemisModel;
-import com.artemis.generator.model.type.TypeModel;
 import com.artemis.generator.model.artemis.ComponentDescriptor;
+import com.artemis.generator.model.type.TypeModel;
 
 /**
  * Implement for strategies that iterates over model.

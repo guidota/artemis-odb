@@ -1,16 +1,15 @@
 package com.artemis;
 
 import com.artemis.annotations.SkipWire;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 import com.artemis.annotations.Wire;
 import com.artemis.component.ComponentX;
 import com.artemis.component.ComponentY;
 import com.artemis.managers.TagManager;
 import com.artemis.systems.EntityProcessingSystem;
 import com.artemis.systems.VoidEntitySystem;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 

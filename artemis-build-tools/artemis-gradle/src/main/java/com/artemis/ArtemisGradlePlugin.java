@@ -1,7 +1,7 @@
 package com.artemis;
 
-import org.gradle.api.Project;
 import org.gradle.api.Plugin;
+import org.gradle.api.Project;
 
 /**
  * @author Daan van Yperen

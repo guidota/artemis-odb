@@ -1,6 +1,5 @@
 package com.artemis;
 
-import com.artemis.annotations.UnstableApi;
 import com.artemis.injection.Injector;
 import com.artemis.utils.Bag;
 import com.artemis.utils.BitVector;
@@ -8,7 +7,10 @@ import com.artemis.utils.IntBag;
 import com.artemis.utils.reflect.ClassReflection;
 import com.artemis.utils.reflect.ReflectionException;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 import static com.artemis.ComponentManager.NO_COMPONENTS;
 

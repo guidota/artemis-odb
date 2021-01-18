@@ -5,12 +5,7 @@ import com.artemis.generator.model.FluidTypes;
 import com.artemis.generator.model.artemis.ComponentDescriptor;
 import com.artemis.generator.model.type.MethodDescriptor;
 import com.artemis.generator.model.type.TypeModel;
-import com.artemis.generator.util.ExtendedTypeReflection;
 import com.artemis.generator.util.MethodBuilder;
-
-import java.lang.reflect.Modifier;
-
-import static org.reflections.ReflectionUtils.*;
 
 /**
  * Adds boolean accessors for flag components.

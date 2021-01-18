@@ -3,13 +3,11 @@ package com.artemis.generator.strategy;
 import com.artemis.Component;
 import com.artemis.generator.common.BuilderModelStrategy;
 import com.artemis.generator.model.artemis.ArtemisModel;
-import com.artemis.generator.model.type.TypeModel;
 import com.artemis.generator.model.artemis.ComponentDescriptor;
 import com.artemis.generator.model.type.MethodDescriptor;
+import com.artemis.generator.model.type.TypeModel;
 import com.artemis.generator.strategy.e.DefaultFieldProxyStrategy;
 import com.artemis.generator.strategy.e.FieldProxyStrategy;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
 import org.junit.Assert;
 
 import java.util.ArrayList;
@@ -27,7 +25,8 @@ public abstract class StrategyTest {
     /**
      * Run strategy on given components.
      */
-    protected TypeModel applyStrategy(Class<? extends BuilderModelStrategy> strategyClazz, Class<? extends Component>... components) {
+    @SafeVarargs
+    protected final TypeModel applyStrategy(Class<? extends BuilderModelStrategy> strategyClazz, Class<? extends Component>... components) {
         final TypeModel model = new TypeModel();
         try {
             final List<FieldProxyStrategy> fieldProxyStrategies = Collections.<FieldProxyStrategy>singletonList(new DefaultFieldProxyStrategy());

@@ -3,14 +3,13 @@
  */
 package com.artemis;
 
-import static org.junit.Assert.*;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import com.artemis.WorldConfigurationBuilder.Priority;
 import com.artemis.utils.Bag;
 import com.artemis.utils.Sort;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author Eric

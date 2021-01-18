@@ -1,15 +1,15 @@
 package com.artemis;
 
-import static com.artemis.Aspect.all;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import com.artemis.annotations.SkipWire;
 import com.artemis.utils.Bag;
 import com.artemis.utils.BitVector;
 import com.artemis.utils.ImmutableBag;
 import com.artemis.utils.IntBag;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.artemis.Aspect.all;
 
 /**
  * <p>Manages all instances of {@link EntitySubscription}.</p>

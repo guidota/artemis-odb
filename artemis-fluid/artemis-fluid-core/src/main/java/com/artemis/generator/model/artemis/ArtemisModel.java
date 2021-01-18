@@ -2,6 +2,7 @@ package com.artemis.generator.model.artemis;
 
 import com.artemis.generator.strategy.e.FieldProxyStrategy;
 import net.mostlyoriginal.api.utils.Preconditions;
+
 import java.util.Collection;
 
 /**

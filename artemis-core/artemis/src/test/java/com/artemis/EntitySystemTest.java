@@ -1,9 +1,9 @@
 package com.artemis;
 
-import static org.junit.Assert.assertEquals;
-
 import com.artemis.systems.EntityProcessingSystem;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by obartley on 6/9/14.

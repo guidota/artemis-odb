@@ -1,10 +1,10 @@
 package com.artemis;
 
-import static org.junit.Assert.*;
-
+import com.artemis.systems.EntityProcessingSystem;
 import org.junit.Test;
 
-import com.artemis.systems.EntityProcessingSystem;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 
 @SuppressWarnings("static-method")
 public class Issue206SystemTest {

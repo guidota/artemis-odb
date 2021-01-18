@@ -1,9 +1,8 @@
 package com.artemis.weaver;
 
+import com.artemis.meta.ClassMetadata;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
-
-import com.artemis.meta.ClassMetadata;
 
 public class ConstructorInvocationVisitor extends MethodVisitor implements Opcodes {
 

@@ -1,15 +1,14 @@
 package com.artemis;
 
 
-import static com.artemis.Aspect.all;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
+import com.artemis.component.ComponentX;
+import com.artemis.component.ComponentY;
 import com.artemis.utils.IntBag;
 import org.junit.Test;
 
-import com.artemis.component.ComponentX;
-import com.artemis.component.ComponentY;
+import static com.artemis.Aspect.all;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class EntityEditTest {
 	

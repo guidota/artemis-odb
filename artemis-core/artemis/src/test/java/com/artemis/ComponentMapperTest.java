@@ -7,7 +7,8 @@ import com.artemis.systems.EntityProcessingSystem;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertSame;
 
 /**
  * @author Daan van Yperen

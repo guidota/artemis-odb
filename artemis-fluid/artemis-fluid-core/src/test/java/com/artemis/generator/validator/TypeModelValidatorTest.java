@@ -5,10 +5,7 @@ import com.artemis.generator.model.type.MethodDescriptor;
 import com.artemis.generator.model.type.ParameterDescriptor;
 import com.artemis.generator.model.type.TypeModel;
 import com.artemis.generator.util.Log;
-import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author Daan van Yperen

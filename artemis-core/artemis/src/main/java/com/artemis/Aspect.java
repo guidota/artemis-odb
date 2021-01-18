@@ -1,9 +1,9 @@
 package com.artemis;
 
-import com.artemis.utils.BitVector;
-import java.util.Collection;
-
 import com.artemis.utils.Bag;
+import com.artemis.utils.BitVector;
+
+import java.util.Collection;
 
 
 /**

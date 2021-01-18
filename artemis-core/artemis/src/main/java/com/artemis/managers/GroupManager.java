@@ -1,10 +1,5 @@
 package com.artemis.managers;
 
-import static com.artemis.Aspect.all;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import com.artemis.BaseSystem;
 import com.artemis.Entity;
 import com.artemis.EntitySubscription;
@@ -12,6 +7,11 @@ import com.artemis.utils.Bag;
 import com.artemis.utils.ImmutableBag;
 import com.artemis.utils.ImmutableIntBag;
 import com.artemis.utils.IntBag;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.artemis.Aspect.all;
 
 /**
  * If you need to group your entities together, e.g tanks going into "units"

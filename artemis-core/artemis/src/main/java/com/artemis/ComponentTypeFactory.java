@@ -1,12 +1,12 @@
-package com.artemis; 
-
-import java.lang.reflect.Modifier;
-import java.util.IdentityHashMap;
+package com.artemis;
 
 import com.artemis.utils.Bag;
 import com.artemis.utils.reflect.ClassReflection;
 import com.artemis.utils.reflect.Constructor;
 import com.artemis.utils.reflect.ReflectionException;
+
+import java.lang.reflect.Modifier;
+import java.util.IdentityHashMap;
 
 /**
  * Tracks all component types in a single world.

@@ -1,9 +1,8 @@
 package com.artemis;
 
-import com.artemis.utils.BitVector;
-
 import com.artemis.EntityTransmuter.TransmuteOperation;
 import com.artemis.utils.Bag;
+import com.artemis.utils.BitVector;
 
 /**
  * Builder for basic Archetype instances. To reap the maximum benefit of Archetypes,

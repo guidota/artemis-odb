@@ -1,10 +1,12 @@
 package com.artemis.generator.strategy.e;
 
 import com.artemis.Entity;
-import com.artemis.generator.model.FluidTypes;
 import com.artemis.generator.common.BuilderModelStrategy;
+import com.artemis.generator.model.FluidTypes;
 import com.artemis.generator.model.artemis.ArtemisModel;
-import com.artemis.generator.model.type.*;
+import com.artemis.generator.model.type.FieldDescriptor;
+import com.artemis.generator.model.type.MethodDescriptor;
+import com.artemis.generator.model.type.TypeModel;
 import com.artemis.generator.util.FieldBuilder;
 import com.artemis.generator.util.MethodBuilder;
 

@@ -1,12 +1,8 @@
 package com.artemis.annotations;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
 import com.artemis.utils.ArtemisProfiler;
+
+import java.lang.annotation.*;
 
 /**
  * Profile EntitySystems with user-specified profiler class, implementing ArtemisProfiler.

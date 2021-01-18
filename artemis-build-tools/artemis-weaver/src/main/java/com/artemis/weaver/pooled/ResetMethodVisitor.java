@@ -1,15 +1,14 @@
 package com.artemis.weaver.pooled;
 
-import static com.artemis.meta.ClassMetadataUtil.instanceFields;
-
-import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
-
 import com.artemis.meta.ClassMetadata;
 import com.artemis.meta.FieldDescriptor;
+import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
 import java.util.regex.Pattern;
+
+import static com.artemis.meta.ClassMetadataUtil.instanceFields;
 
 public class ResetMethodVisitor extends MethodVisitor implements Opcodes {
 

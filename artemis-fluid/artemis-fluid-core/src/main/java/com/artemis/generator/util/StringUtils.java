@@ -16,17 +16,6 @@
  */
 package com.artemis.generator.util;
 
-import java.io.UnsupportedEncodingException;
-
-import java.nio.charset.Charset;
-import java.text.Normalizer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.regex.Pattern;
-
 import static java.lang.Character.getType;
 
 /**

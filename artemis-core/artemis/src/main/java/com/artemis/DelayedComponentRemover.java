@@ -1,7 +1,6 @@
 package com.artemis;
 
 import com.artemis.utils.Bag;
-
 import com.artemis.utils.BitVector;
 
 class DelayedComponentRemover<A extends Component> extends ComponentRemover<A> {

@@ -5,7 +5,7 @@ import com.artemis.common.TestEntityManagerB;
 import com.artemis.common.TestEntityManagerC;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;import java.lang.Exception;import java.lang.Override;
+import org.junit.Test;
 
 /**
  * @author Daan van Yperen

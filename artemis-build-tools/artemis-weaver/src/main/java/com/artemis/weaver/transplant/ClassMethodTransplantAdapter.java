@@ -3,7 +3,9 @@ package com.artemis.weaver.transplant;
 import com.artemis.Weaver;
 import com.artemis.meta.ClassMetadata;
 import com.artemis.meta.MethodDescriptor;
-import org.objectweb.asm.*;
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.ClassVisitor;
+import org.objectweb.asm.Opcodes;
 
 public class ClassMethodTransplantAdapter extends ClassVisitor implements Opcodes {
 	protected final ClassReader source;

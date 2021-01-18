@@ -1,12 +1,11 @@
 package com.artemis.weaver.pooled;
 
 
+import com.artemis.meta.ClassMetadata;
+import com.artemis.weaver.ConstructorInvocationVisitor;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
-
-import com.artemis.meta.ClassMetadata;
-import com.artemis.weaver.ConstructorInvocationVisitor;
 
 public class PooledComponentWeaver extends ClassVisitor implements Opcodes{
 

@@ -8,7 +8,6 @@ import org.reflections.util.ConfigurationBuilder;
 
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.Collection;
 import java.util.Set;
 import java.util.concurrent.Executors;
 

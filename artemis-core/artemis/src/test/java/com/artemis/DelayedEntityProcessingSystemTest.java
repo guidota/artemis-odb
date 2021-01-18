@@ -1,13 +1,12 @@
 package com.artemis;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.LinkedList;
-
+import com.artemis.systems.DelayedEntityProcessingSystem;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.artemis.systems.DelayedEntityProcessingSystem;
+import java.util.LinkedList;
+
+import static org.junit.Assert.assertEquals;
 
 public class DelayedEntityProcessingSystemTest
 {

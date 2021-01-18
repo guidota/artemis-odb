@@ -1,12 +1,14 @@
 package com.artemis.managers;
 
+import com.artemis.BaseSystem;
+import com.artemis.Entity;
+import com.artemis.EntitySubscription;
 import com.artemis.utils.BitVector;
+import com.artemis.utils.IntBag;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.artemis.*;
-import com.artemis.utils.IntBag;
 
 import static com.artemis.Aspect.all;
 

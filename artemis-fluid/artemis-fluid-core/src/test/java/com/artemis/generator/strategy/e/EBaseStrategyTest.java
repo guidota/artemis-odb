@@ -2,7 +2,6 @@ package com.artemis.generator.strategy.e;
 
 import com.artemis.generator.model.type.TypeModel;
 import com.artemis.generator.strategy.StrategyTest;
-import com.artemis.generator.strategy.e.EBaseStrategy;
 import com.artemis.generator.test.Flag;
 import org.junit.Test;
 

@@ -6,11 +6,12 @@ import com.artemis.utils.Bag;
 import com.artemis.utils.ImmutableBag;
 import com.artemis.utils.IntBag;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.IdentityHashMap;
+import java.util.List;
+import java.util.Map;
 
-import static com.artemis.WorldConfiguration.ASPECT_SUBSCRIPTION_MANAGER_IDX;
-import static com.artemis.WorldConfiguration.COMPONENT_MANAGER_IDX;
-import static com.artemis.WorldConfiguration.ENTITY_MANAGER_IDX;
+import static com.artemis.WorldConfiguration.*;
 
 /**
  * The primary instance for the framework.

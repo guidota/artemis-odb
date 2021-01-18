@@ -5,7 +5,7 @@ import com.artemis.generator.model.artemis.ArtemisModel;
 import com.artemis.generator.model.artemis.ComponentDescriptor;
 import com.artemis.generator.model.type.TypeModel;
 
-import java.lang.reflect.*;
+import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Set;
 

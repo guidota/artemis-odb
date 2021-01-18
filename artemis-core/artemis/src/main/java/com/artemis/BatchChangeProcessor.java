@@ -1,9 +1,8 @@
 package com.artemis;
 
 import com.artemis.utils.Bag;
-import com.artemis.utils.IntBag;
-
 import com.artemis.utils.BitVector;
+import com.artemis.utils.IntBag;
 
 final class BatchChangeProcessor {
 	private final World world;

@@ -1,14 +1,13 @@
 package com.artemis;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-
 import com.artemis.annotations.SkipWire;
-import org.junit.Test;
-
 import com.artemis.component.ComponentX;
 import com.artemis.component.ComponentY;
 import com.artemis.systems.VoidEntitySystem;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class MultiWorldTest
 {

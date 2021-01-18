@@ -21,6 +21,7 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.util.*;
@@ -32,7 +33,6 @@ import java.util.*;
  */
 public class FluidGenerator {
 
-    private static final String FLUID_UTILITY_SOURCES_DIR = "/fluid-utility-sources";
     private static final String COM_ARTEMIS_MODULE_DIR = "com/artemis/";
     private static final Comparator<FieldProxyStrategy> SORT_BY_PRIORITY_DESC_FALLBACK_ON_NAME = new Comparator<FieldProxyStrategy>() {
         @Override
@@ -43,16 +43,6 @@ public class FluidGenerator {
         }
     };
 
-    /**
-     * Generate fluid API files.
-     * Finds all Component instances at given urls using reflection.
-     *
-     * @param urls              classpath urls to reflect over.
-     * @param outputDirectory   source root.
-     * @param log               output.
-     * @param globalPreferences
-     * @throws com.artemis.generator.validator.TypeModelValidatorException
-     */
     public void generate(Set<URL> urls, File outputDirectory, Log log, FluidGeneratorPreferences globalPreferences) {
         final AbstractClassCollectStrategy collectStrategy = collectStrategy(urls);
         generate(collectStrategy.allComponents(), collectStrategy.allFieldProxyStrategies(), outputDirectory, log, globalPreferences);
@@ -63,16 +53,6 @@ public class FluidGenerator {
         return new ReflectionsClassCollectStrategy(urls);
     }
 
-    /**
-     * Generate fluid API files.
-     *
-     * @param components           components to consider.
-     * @param fieldProxyStrategies field proxy strategies to apply
-     * @param outputDirectory      source root.
-     * @param log                  output.
-     * @param globalPreferences
-     * @throws com.artemis.generator.validator.TypeModelValidatorException
-     */
     public void generate(Collection<Class<? extends Component>> components, Collection<Class<? extends FieldProxyStrategy>> fieldProxyStrategies, File outputDirectory, Log log, FluidGeneratorPreferences globalPreferences) {
 
         if (fieldProxyStrategies == null || fieldProxyStrategies.isEmpty()) {
@@ -131,22 +111,12 @@ public class FluidGenerator {
         return components;
     }
 
-    /**
-     * @param artemisModel
-     * @param generator
-     * @param file
-     * @param log
-     * @throws com.artemis.generator.validator.TypeModelValidatorException
-     */
     private void generateFile(ArtemisModel artemisModel, TypeModelGenerator generator, File file, Log log) {
         try {
-            FileWriter fileWriter = new FileWriter(file);
-            try {
+            try (FileWriter fileWriter = new FileWriter(file)) {
                 TypeModel typeModel = createExampleTypeModel(generator, artemisModel);
                 new TypeModelValidator(log, file.getName()).validate(typeModel);
                 new PoetSourceGenerator().generate(typeModel, fileWriter);
-            } finally {
-                fileWriter.close();
             }
 
         } catch (TypeModelValidatorException e) {
@@ -182,12 +152,12 @@ public class FluidGenerator {
         for (Class<? extends FieldProxyStrategy> clazz : fieldProxyStrategiesClasses) {
             try {
                 log.info(".. Registering field handler: " + clazz.getName());
-                results.add(clazz.newInstance());
-            } catch (InstantiationException | IllegalAccessException e) {
+                results.add(clazz.getDeclaredConstructor().newInstance());
+            } catch (NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
                 throw new RuntimeException("Failed to instance " + clazz.getName() + ".", e);
             }
         }
-        Collections.sort(results, SORT_BY_PRIORITY_DESC_FALLBACK_ON_NAME);
+        results.sort(SORT_BY_PRIORITY_DESC_FALLBACK_ON_NAME);
         log.info("Default:" + (!results.isEmpty() ? results.get(0) : "missing"));
         return results;
     }

@@ -1,15 +1,9 @@
 package com.artemis.weaver;
 
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.ClassVisitor;
-import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.Label;
-import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
-
 import com.artemis.ClassUtil;
 import com.artemis.meta.ClassMetadata;
 import com.artemis.weaver.pooled.PooledComponentWeaver;
+import org.objectweb.asm.*;
 
 public class ComponentTypeTransmuter extends CallableTransmuter<Void> implements Opcodes {
 	private ClassMetadata meta;

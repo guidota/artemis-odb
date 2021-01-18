@@ -1,12 +1,11 @@
 package com.artemis;
 
-import java.util.HashSet;
-import java.util.Set;
-
+import com.artemis.component.ComponentX;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.artemis.component.ComponentX;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 

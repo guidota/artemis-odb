@@ -1,11 +1,10 @@
 package com.artemis.weaver;
 
-import static com.artemis.meta.ClassMetadataUtil.instanceFieldTypes;
-
-import org.objectweb.asm.Opcodes;
-
 import com.artemis.meta.ClassMetadata;
 import com.artemis.meta.FieldDescriptor;
+import org.objectweb.asm.Opcodes;
+
+import static com.artemis.meta.ClassMetadataUtil.instanceFieldTypes;
 
 public final class TypedOpcodes implements Opcodes {
 

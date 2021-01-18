@@ -1,7 +1,10 @@
 package com.artemis.generator.generator;
 
 import com.artemis.generator.common.SourceGenerator;
-import com.artemis.generator.model.type.*;
+import com.artemis.generator.model.type.FieldDescriptor;
+import com.artemis.generator.model.type.MethodDescriptor;
+import com.artemis.generator.model.type.ParameterDescriptor;
+import com.artemis.generator.model.type.TypeModel;
 import com.squareup.javapoet.*;
 
 import javax.lang.model.element.Modifier;

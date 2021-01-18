@@ -1,9 +1,11 @@
 package com.artemis.generator.strategy.components;
 
-import com.artemis.ComponentMapper;
 import com.artemis.generator.common.IterativeModelStrategy;
 import com.artemis.generator.model.artemis.ComponentDescriptor;
-import com.artemis.generator.model.type.*;
+import com.artemis.generator.model.type.AccessLevel;
+import com.artemis.generator.model.type.FieldDescriptor;
+import com.artemis.generator.model.type.ParameterizedTypeImpl;
+import com.artemis.generator.model.type.TypeModel;
 import com.artemis.generator.util.FieldBuilder;
 
 /**

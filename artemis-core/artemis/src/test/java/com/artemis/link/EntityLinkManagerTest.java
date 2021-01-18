@@ -7,9 +7,7 @@ import com.artemis.utils.Bag;
 import com.artemis.utils.IntBag;
 import org.junit.Test;
 
-import static com.artemis.annotations.LinkPolicy.Policy.CHECK_SOURCE;
-import static com.artemis.annotations.LinkPolicy.Policy.CHECK_SOURCE_AND_TARGETS;
-import static com.artemis.annotations.LinkPolicy.Policy.SKIP;
+import static com.artemis.annotations.LinkPolicy.Policy.*;
 import static org.junit.Assert.*;
 
 public class EntityLinkManagerTest {

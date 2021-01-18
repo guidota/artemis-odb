@@ -1,12 +1,8 @@
 package com.artemis.annotations;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
 import com.artemis.Component;
+
+import java.lang.annotation.*;
 
 /**
  * Transforms a {@link Component} into a {@link com.artemis.PooledComponent}. Component transformation

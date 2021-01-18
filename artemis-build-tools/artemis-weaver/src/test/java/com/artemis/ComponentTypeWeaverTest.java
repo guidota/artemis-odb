@@ -1,21 +1,16 @@
 package com.artemis;
 
-import static com.artemis.Transformer.transform;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import java.io.InputStream;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.Type;
-
 import com.artemis.component.ComponentToWeave;
 import com.artemis.component.PooledForced;
 import com.artemis.meta.ClassMetadata;
 import com.artemis.meta.ClassMetadata.GlobalConfiguration;
 import com.artemis.meta.ClassMetadata.WeaverType;
+import org.junit.Before;
+import org.junit.Test;
+
+import static com.artemis.Transformer.transform;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @SuppressWarnings("static-method")
 public class ComponentTypeWeaverTest {

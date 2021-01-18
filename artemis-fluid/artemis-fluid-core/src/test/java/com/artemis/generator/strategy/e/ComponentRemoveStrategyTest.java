@@ -5,8 +5,6 @@ import com.artemis.generator.strategy.StrategyTest;
 import com.artemis.generator.test.Flag;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * @author Daan van Yperen
  */

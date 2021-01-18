@@ -1,12 +1,12 @@
 package com.artemis.managers;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
 import com.artemis.Entity;
 import com.artemis.Manager;
 import com.artemis.utils.Bag;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class UuidEntityManager extends Manager {
 	private final Map<UUID, Entity> uuidToEntity;

@@ -1,9 +1,9 @@
 package com.artemis.generator.strategy.e;
 
 import com.artemis.generator.common.IterativeModelStrategy;
-import com.artemis.generator.model.type.TypeModel;
 import com.artemis.generator.model.artemis.ComponentDescriptor;
 import com.artemis.generator.model.type.MethodDescriptor;
+import com.artemis.generator.model.type.TypeModel;
 import com.artemis.generator.util.MethodBuilder;
 import com.artemis.generator.util.Strings;
 

@@ -10,7 +10,8 @@ import com.artemis.component.ComponentX;
 import com.artemis.component.ComponentY;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * @author Daan van Yperen

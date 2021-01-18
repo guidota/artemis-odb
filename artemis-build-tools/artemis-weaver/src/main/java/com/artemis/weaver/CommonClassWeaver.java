@@ -1,14 +1,13 @@
 package com.artemis.weaver;
 
 
-import static com.artemis.meta.ClassMetadataUtil.superName;
-
+import com.artemis.Weaver;
+import com.artemis.meta.ClassMetadata;
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 
-import com.artemis.Weaver;
-import com.artemis.meta.ClassMetadata;
+import static com.artemis.meta.ClassMetadataUtil.superName;
 
 class CommonClassWeaver extends ClassVisitor implements Opcodes {
 

@@ -1,11 +1,10 @@
 package com.artemis.weaver;
 
 
+import com.artemis.Weaver;
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
-
-import com.artemis.Weaver;
 
 class ProfileAnnotationRemoverWeaver extends ClassVisitor implements Opcodes {
 

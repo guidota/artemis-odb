@@ -1,10 +1,9 @@
 package com.artemis.weaver.profile;
 
+import com.artemis.meta.ClassMetadata;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
-
-import com.artemis.meta.ClassMetadata;
 
 public class ProfileVisitor extends ClassVisitor implements Opcodes {
 	private ClassMetadata info;

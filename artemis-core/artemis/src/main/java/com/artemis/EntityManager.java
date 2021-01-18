@@ -2,10 +2,9 @@ package com.artemis;
 
 import com.artemis.annotations.SkipWire;
 import com.artemis.utils.Bag;
+import com.artemis.utils.BitVector;
 import com.artemis.utils.IntBag;
 import com.artemis.utils.IntDeque;
-
-import com.artemis.utils.BitVector;
 
 import static com.artemis.Aspect.all;
 

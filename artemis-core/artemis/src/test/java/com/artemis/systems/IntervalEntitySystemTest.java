@@ -1,13 +1,12 @@
 package com.artemis.systems;
 
-import static com.artemis.Aspect.all;
-import static org.junit.Assert.*;
-
+import com.artemis.World;
 import com.artemis.WorldConfiguration;
+import com.artemis.component.ComponentX;
 import org.junit.Test;
 
-import com.artemis.World;
-import com.artemis.component.ComponentX;
+import static com.artemis.Aspect.all;
+import static org.junit.Assert.assertEquals;
 
 @SuppressWarnings("static-method")
 public class IntervalEntitySystemTest {

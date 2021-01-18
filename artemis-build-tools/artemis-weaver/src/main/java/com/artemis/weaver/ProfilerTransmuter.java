@@ -1,14 +1,9 @@
 package com.artemis.weaver;
 
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.ClassVisitor;
-import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.FieldVisitor;
-import org.objectweb.asm.Opcodes;
-
 import com.artemis.ClassUtil;
 import com.artemis.meta.ClassMetadata;
 import com.artemis.weaver.profile.ProfileVisitor;
+import org.objectweb.asm.*;
 
 /**
  * Rewrites access to packed components so that related classes can

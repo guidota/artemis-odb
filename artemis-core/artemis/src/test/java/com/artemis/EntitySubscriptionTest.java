@@ -4,7 +4,6 @@ import com.artemis.component.ComponentX;
 import com.artemis.component.ComponentY;
 import com.artemis.systems.IteratingSystem;
 import com.artemis.utils.IntBag;
-
 import org.junit.Test;
 
 import static com.artemis.Aspect.all;

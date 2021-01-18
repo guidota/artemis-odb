@@ -2,7 +2,6 @@ package com.artemis;
 
 import com.artemis.annotations.All;
 import com.artemis.common.LifecycleComponent;
-import com.artemis.common.NotExplicitlyDelayedComponent;
 import com.artemis.component.ComponentX;
 import com.artemis.utils.IntBag;
 import org.junit.Assert;

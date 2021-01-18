@@ -1,26 +1,19 @@
 package com.artemis.meta;
 
 
-import static com.artemis.Weaver.POOLED_ANNOTATION;
-import static com.artemis.Weaver.PROFILER_ANNOTATION;
-import static com.artemis.Weaver.WOVEN_ANNOTATION;
-
+import com.artemis.Weaver;
+import com.artemis.meta.ClassMetadata.OptimizationType;
+import com.artemis.meta.ClassMetadata.WeaverType;
 import com.artemis.weaver.optimizer.EntitySystemType;
 import com.artemis.weaver.template.MultiEntityIdLink;
 import com.artemis.weaver.template.MultiEntityLink;
 import com.artemis.weaver.template.UniEntityIdLink;
 import com.artemis.weaver.template.UniEntityLink;
-import org.objectweb.asm.AnnotationVisitor;
-import org.objectweb.asm.ClassVisitor;
-import org.objectweb.asm.FieldVisitor;
-import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
-
-import com.artemis.Weaver;
-import com.artemis.meta.ClassMetadata.OptimizationType;
-import com.artemis.meta.ClassMetadata.WeaverType;
+import org.objectweb.asm.*;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.InsnNode;
+
+import static com.artemis.Weaver.*;
 
 public class MetaScanner extends ClassVisitor implements Opcodes {
 	

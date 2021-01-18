@@ -1,11 +1,11 @@
 package com.artemis.cli;
 
-import java.io.File;
-import java.security.ProtectionDomain;
-
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
+
+import java.io.File;
+import java.security.ProtectionDomain;
 
 public class CliApplication {
 	

@@ -1,8 +1,8 @@
 package com.artemis.generator;
 
 import com.artemis.generator.common.BuilderModelStrategy;
-import com.artemis.generator.model.type.TypeModel;
 import com.artemis.generator.model.artemis.ArtemisModel;
+import com.artemis.generator.model.type.TypeModel;
 import com.google.common.base.Preconditions;
 
 import java.util.LinkedList;

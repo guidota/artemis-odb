@@ -1,13 +1,13 @@
 package com.artemis.cli;
 
-import java.io.File;
-import java.util.Arrays;
-
 import com.artemis.cli.converter.FileOutputConverter;
 import com.artemis.cli.converter.FolderConverter;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
 import net.onedaybeard.ecs.model.ComponentDependencyMatrix;
+
+import java.io.File;
+import java.util.Arrays;
 
 @Parameters(
 		commandDescription="Generate the Component Dependency Matrix from existing classes")

@@ -1,17 +1,16 @@
 package com.artemis;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
+import com.artemis.component.ComponentX;
+import com.artemis.component.ComponentY;
 import com.artemis.component.ReusedComponent;
+import com.artemis.systems.EntityProcessingSystem;
 import com.artemis.utils.Bag;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.artemis.component.ComponentX;
-import com.artemis.component.ComponentY;
-import com.artemis.systems.EntityProcessingSystem;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class ArchetypeTest {
 	private World world;

@@ -1,7 +1,10 @@
 package com.artemis.utils;
 
 import com.artemis.*;
-import com.artemis.managers.*;
+import com.artemis.managers.GroupManager;
+import com.artemis.managers.PlayerManager;
+import com.artemis.managers.TagManager;
+import com.artemis.managers.UuidEntityManager;
 import com.artemis.utils.reflect.ClassReflection;
 
 import java.util.UUID;

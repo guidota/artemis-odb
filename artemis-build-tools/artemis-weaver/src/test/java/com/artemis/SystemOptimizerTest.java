@@ -2,7 +2,10 @@ package com.artemis;
 
 import com.artemis.meta.ClassMetadata;
 import com.artemis.meta.ClassMetadata.GlobalConfiguration;
-import com.artemis.system.*;
+import com.artemis.system.BeginEndSystem;
+import com.artemis.system.IteratingPoorFellowSystem;
+import com.artemis.system.IteratingSafeOptimizeSystem;
+import com.artemis.system.NoBeginEndSystem;
 import org.junit.Before;
 import org.junit.Test;
 import org.objectweb.asm.ClassReader;

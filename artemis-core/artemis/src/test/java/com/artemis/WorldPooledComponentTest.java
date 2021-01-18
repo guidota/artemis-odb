@@ -1,15 +1,14 @@
 package com.artemis;
 
-import static org.junit.Assert.assertEquals;
+import com.artemis.component.CountingPooledComponent;
+import com.artemis.component.ReusedComponent;
+import com.artemis.systems.EntityProcessingSystem;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import com.artemis.component.CountingPooledComponent;
-import org.junit.Test;
-
-import com.artemis.component.ReusedComponent;
-import com.artemis.systems.EntityProcessingSystem;
+import static org.junit.Assert.assertEquals;
 
 public class WorldPooledComponentTest
 {

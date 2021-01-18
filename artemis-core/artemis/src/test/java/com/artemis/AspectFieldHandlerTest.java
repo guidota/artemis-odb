@@ -8,9 +8,7 @@ import com.artemis.component.*;
 import org.junit.Test;
 
 import static com.artemis.Aspect.all;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class AspectFieldHandlerTest {
 	private Aspect.Builder reference = all(ComponentX.class, ComponentY.class)

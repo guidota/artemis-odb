@@ -1,8 +1,5 @@
 package com.artemis;
 
-import java.lang.Class;import java.lang.Comparable;import java.lang.Object;import java.lang.Override;
-
-
 /**
  * Artemis pieces with priority pending registration.
  *

@@ -1,12 +1,7 @@
 package com.artemis;
 
-import com.artemis.utils.BitVector;
-
 import com.artemis.annotations.SkipWire;
-import com.artemis.utils.Bag;
-import com.artemis.utils.ImmutableBag;
-import com.artemis.utils.IntBag;
-import com.artemis.utils.ShortBag;
+import com.artemis.utils.*;
 import com.artemis.utils.reflect.ClassReflection;
 import com.artemis.utils.reflect.ReflectionException;
 

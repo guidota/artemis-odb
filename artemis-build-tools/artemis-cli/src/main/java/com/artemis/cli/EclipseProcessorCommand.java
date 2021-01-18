@@ -1,11 +1,12 @@
 package com.artemis.cli;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.List;
-import java.util.Properties;
+import com.artemis.cli.converter.EclipseProjectFolder;
+import com.artemis.cli.converter.FolderConverter;
+import com.beust.jcommander.Parameter;
+import com.beust.jcommander.Parameters;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+import org.w3c.dom.Document;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -13,16 +14,12 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
-import org.w3c.dom.Document;
-
-import com.artemis.cli.converter.EclipseProjectFolder;
-import com.artemis.cli.converter.FolderConverter;
-import com.beust.jcommander.Parameter;
-import com.beust.jcommander.Parameters;
-import com.beust.jcommander.Strings;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.List;
+import java.util.Properties;
 
 @Parameters(
 	commandDescription="Configures EntityFactory Annotation Processor with Eclipse project")

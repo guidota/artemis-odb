@@ -1,29 +1,20 @@
 package com.artemis;
 
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-
-import com.artemis.weaver.*;
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.Type;
-
 import com.artemis.meta.ClassMetadata;
 import com.artemis.meta.ClassMetadata.GlobalConfiguration;
 import com.artemis.meta.ClassMetadata.OptimizationType;
 import com.artemis.meta.ClassMetadata.WeaverType;
 import com.artemis.meta.MetaScanner;
+import com.artemis.weaver.*;
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.Type;
+
+import java.io.*;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Weaver {
 	public static final String PROFILER_ANNOTATION = "Lcom/artemis/annotations/Profile;";

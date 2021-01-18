@@ -1,14 +1,11 @@
 package com.artemis.generator.util;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Lists;
-import org.reflections.ReflectionUtils;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.*;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.*;
+import java.util.function.Predicate;
 
 import static org.reflections.ReflectionUtils.*;
 
@@ -17,16 +14,16 @@ import static org.reflections.ReflectionUtils.*;
  */
 public abstract class ExtendedTypeReflection {
 
-    private static Map<Type, Set<Field>> allPublicFields = new HashMap<Type, Set<Field>>();
-    private static Map<Type, Set<Method>> allPublicMethods = new HashMap<Type, Set<Method>>();
-    private static Map<Type, List<Annotation>> allAnnotations = new HashMap<Type, List<Annotation>>();
+    private static final Map<Type, Set<Field>> allPublicFields = new HashMap<>();
+    private static final Map<Type, Set<Method>> allPublicMethods = new HashMap<>();
+    private static final Map<Type, List<Annotation>> allAnnotations = new HashMap<>();
 
     /**
      * Get if component is a flag component.
      *
      * @return {@code true} is simple flag, {@code false} if it is a data container.
      */
-    public static boolean isFlagComponent(Class type) {
+    public static boolean isFlagComponent(Class<?> type) {
         return getAllPublicFields(type).isEmpty() &&
                 getAllPublicMethods(type).isEmpty();
     }
@@ -37,10 +34,10 @@ public abstract class ExtendedTypeReflection {
      * Excludes static.
      */
     @SuppressWarnings("unchecked")
-    public static Set<Field> getAllPublicFields(Class type) {
+    public static Set<Field> getAllPublicFields(Class<?> type) {
         Set<Field> result = allPublicFields.get(type);
         if (result == null) {
-            result = getAllFields(type, withModifier(Modifier.PUBLIC), withoutModifier(Modifier.STATIC));
+            result = getAllFields(type, withModifier(Modifier.PUBLIC), withoutModifier(Modifier.STATIC)::test);
             allPublicFields.put(type, result);
         }
         return result;
@@ -50,8 +47,8 @@ public abstract class ExtendedTypeReflection {
      * Get all public annotations of type, throughout the hierarchy!
      * Ordered from superclass to subclass.
      */
-    @SuppressWarnings("unchecked")
-    public static List<Annotation> getAllAnnotations(Class type) {
+
+    public static List<Annotation> getAllAnnotations(Class<?> type) {
         List<Annotation> result = allAnnotations.get(type);
         if (result == null) {
             result = getAllAnnotationsList(type);
@@ -61,17 +58,18 @@ public abstract class ExtendedTypeReflection {
     }
 
     /** Returns all annotations on hierarchy. Ignores Object and interfaces. */
-    public static List<Annotation> getAllAnnotationsList(Class type) {
-        ArrayList<Annotation> result = new ArrayList<Annotation>(4);
-        for (Class t : getHierarchy(type)) {
-            result.addAll(ReflectionUtils.getAnnotations(t));
+    @SuppressWarnings("unchecked")
+    public static List<Annotation> getAllAnnotationsList(Class<?> type) {
+        ArrayList<Annotation> result = new ArrayList<>(4);
+        for (Class<?> t : getHierarchy(type)) {
+            result.addAll(getAnnotations(t));
         }
         return result;
     }
 
     /** Return class hierarchy, except object. */
-    private static List<Class> getHierarchy(Class type) {
-        ArrayList<Class> results = new ArrayList<Class>();
+    private static List<Class<?>> getHierarchy(Class<?> type) {
+        ArrayList<Class<?>> results = new ArrayList<>();
         while (type != Object.class && !type.isInterface()) {
             results.add(type);
             type = type.getSuperclass();
@@ -86,21 +84,17 @@ public abstract class ExtendedTypeReflection {
      * Excludes static, abstract.
      */
     @SuppressWarnings("unchecked")
-    public static Set<Method> getAllPublicMethods(Class type) {
+    public static Set<Method> getAllPublicMethods(Class<?> type) {
         Set<Method> result = allPublicMethods.get(type);
         if (result == null) {
-            result = getAllMethods(type, withModifier(Modifier.PUBLIC), withoutModifier(Modifier.ABSTRACT), withoutModifier(Modifier.STATIC), withoutModifier(Modifier.VOLATILE));
+            result = getAllMethods(type, withModifier(Modifier.PUBLIC), withoutModifier(Modifier.ABSTRACT)::test, withoutModifier(Modifier.STATIC)::test, withoutModifier(Modifier.VOLATILE)::test);
             allPublicMethods.put(type, result);
         }
         return result;
     }
 
     public static <T extends Member> Predicate<T> withoutModifier(final int mod) {
-        return new Predicate<T>() {
-            public boolean apply(T input) {
-                return input != null && (input.getModifiers() & mod) == 0;
-            }
-        };
+        return input -> input != null && (input.getModifiers() & mod) == 0;
     }
 
 }
