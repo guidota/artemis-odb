@@ -23,7 +23,7 @@ public class FluidApiGenerationTask extends DefaultTask {
 
     private FileCollection classpath;
 
-    public FluidGeneratorPreferences preferences = new FluidGeneratorPreferences();
+    private FluidGeneratorPreferences preferences = new FluidGeneratorPreferences();
 
     @TaskAction
     public void fluid() {
@@ -91,6 +91,7 @@ public class FluidApiGenerationTask extends DefaultTask {
         return preferences;
     }
 
+    @Option(option = "preferences", description = "Set preferences to fluid generator.")
     public void setPreferences(FluidGeneratorPreferences preferences) {
         this.preferences = preferences;
     }
