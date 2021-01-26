@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":artemis-odb-weaver"))
+    api(project(":artemis-odb-weaver"))
 }
 
 description = "artemis-odb-gradle-plugin"
