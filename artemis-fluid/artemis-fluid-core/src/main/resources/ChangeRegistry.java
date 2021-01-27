@@ -17,6 +17,7 @@ public final class ChangeRegistry extends BaseSystem {
         E._changeRegistry = this;
         toRemove.clear();
         toMark.clear();
+        components.clear();
     }
 
     void remove(int entityId, Class<? extends Component> componentClass) {
