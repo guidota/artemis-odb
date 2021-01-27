@@ -26,7 +26,7 @@ public class ComponentMethodProxyStrategy extends IterativeModelStrategy {
 
     @Override
     protected void apply(ComponentDescriptor component, TypeModel model) {
-        final Set<Method> methods = component.getAllPublicMethods();
+        final Set<Method> methods = component.getAllMethods();
         exposeMethods(component, model, methods);
     }
 

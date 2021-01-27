@@ -62,8 +62,8 @@ public class ComponentDescriptor implements Comparable<ComponentDescriptor> {
         return ExtendedTypeReflection.getAllPublicFields(type);
     }
 
-    public Set<Method> getAllPublicMethods() {
-        return ExtendedTypeReflection.getAllPublicMethods(type);
+    public Set<Method> getAllMethods() {
+        return ExtendedTypeReflection.getAllMethods(type);
     }
 
     public boolean isFlagComponent() {
