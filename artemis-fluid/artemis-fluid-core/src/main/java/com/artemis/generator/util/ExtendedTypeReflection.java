@@ -28,7 +28,7 @@ public abstract class ExtendedTypeReflection {
      */
     public static boolean isFlagComponent(Class type) {
         return getAllPublicFields(type).isEmpty() &&
-                getAllPublicMethods(type).isEmpty();
+                getAllMethods(type).isEmpty();
     }
 
     /**
@@ -86,10 +86,10 @@ public abstract class ExtendedTypeReflection {
      * Excludes static, abstract.
      */
     @SuppressWarnings("unchecked")
-    public static Set<Method> getAllPublicMethods(Class type) {
+    public static Set<Method> getAllMethods(Class type) {
         Set<Method> result = allPublicMethods.get(type);
         if (result == null) {
-            result = getAllMethods(type, withModifier(Modifier.PUBLIC), withoutModifier(Modifier.ABSTRACT), withoutModifier(Modifier.STATIC), withoutModifier(Modifier.VOLATILE));
+            result = ReflectionUtils.getAllMethods(type, withoutModifier(Modifier.PRIVATE), withoutModifier(Modifier.ABSTRACT), withoutModifier(Modifier.STATIC), withoutModifier(Modifier.VOLATILE));
             allPublicMethods.put(type, result);
         }
         return result;
