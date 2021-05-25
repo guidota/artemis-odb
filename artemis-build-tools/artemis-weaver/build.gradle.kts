@@ -8,11 +8,11 @@ plugins {
 }
 
 dependencies {
-    implementation("org.ow2.asm:asm:8.0.1")
-    implementation("org.ow2.asm:asm-tree:8.0.1")
-    implementation("org.ow2.asm:asm-util:8.0.1")
-    implementation("org.ow2.asm:asm-analysis:8.0.1")
-    implementation("org.ow2.asm:asm-commons:8.0.1")
+    implementation("org.ow2.asm:asm:9.1")
+    implementation("org.ow2.asm:asm-tree:9.1")
+    implementation("org.ow2.asm:asm-util:9.1")
+    implementation("org.ow2.asm:asm-analysis:9.1")
+    implementation("org.ow2.asm:asm-commons:9.1")
     implementation(project(":artemis-odb"))
 }
 
